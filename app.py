@@ -10,10 +10,6 @@ from langchain_community.vectorstores import Chroma
 if "SILICON_KEY" in st.secrets:
     SILICON_FLOW_API_KEY = st.secrets["SILICON_KEY"]
     DEEPSEEK_API_KEY = st.secrets["DEEPSEEK_KEY"]
-else:
-    # 这里为了防止你本地运行报错，可以保留你原来的Key，但上传前最好删掉
-    SILICON_FLOW_API_KEY = "sk-ddnnkphyxoiwaszzcomttqjfspitnoqevwbwaxhwwcyxyctj" 
-    DEEPSEEK_API_KEY = "sk-f3a1469735ec4c81b4bc63a1618501d0"
 # 3. 数据库路径
 DB_PATH = "./chroma_db_data"
 
@@ -202,4 +198,5 @@ if user_input:
             st.session_state.messages.append({"role": "assistant", "content": answer})
 
         except Exception as e:
+
             st.error(f"发生错误: {e}")
