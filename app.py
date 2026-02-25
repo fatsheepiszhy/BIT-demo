@@ -19,8 +19,8 @@ if not os.path.exists(DATA_FOLDER):
     os.makedirs(DATA_FOLDER)
 
 # ================= 页面基础设置 =================
-st.set_page_config(page_title="RAG 智能面试助手", page_icon="🤖", layout="wide")
-st.title("🤖 RAG 智能面试助手")
+st.set_page_config(page_title="RAG 智能问答系统", page_icon="🤖", layout="wide")
+st.title("🤖 RAG 智能问答系统")
 st.markdown("### 基于 DeepSeek + ChromaDB 的垂直领域知识问答")
 
 # 初始化聊天记录
@@ -200,4 +200,5 @@ if user_input:
         except Exception as e:
 
             st.error(f"发生错误: {e}")
+
 
