@@ -116,7 +116,7 @@ for msg in st.session_state.messages:
         st.markdown(msg["content"])
 
 # 2. 接收用户输入
-user_input = st.chat_input("请输入关于文档的问题...")
+user_input = st.chat_input("请输入关于文档的问题...(例如：关于兴趣爱好的模板是什么?)")
 
 if user_input:
     st.session_state.messages.append({"role": "user", "content": user_input})
@@ -200,4 +200,5 @@ if user_input:
 
         except Exception as e:
             st.error(f"发生错误: {e}")
+
 
