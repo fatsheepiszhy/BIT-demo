@@ -21,8 +21,8 @@ if not os.path.exists(DATA_FOLDER):
     os.makedirs(DATA_FOLDER)
 
 # ================= 页面基础设置 =================
-st.set_page_config(page_title="RAG 智能面试助手", page_icon="🤖", layout="wide")
-st.title("🤖 北理工复试助手 (RAG System)")
+st.set_page_config(page_title="RAG 智能问答系统", page_icon="🤖", layout="wide")
+st.title("RAG 智能问答系统")
 st.markdown("### 基于 DeepSeek + ChromaDB 的垂直领域知识问答")
 
 # 初始化聊天记录
@@ -49,7 +49,7 @@ with st.sidebar:
     else:
         current_pdf_path = os.path.join(DATA_FOLDER, "test.pdf")
         if os.path.exists(current_pdf_path):
-            st.info(f"使用默认文件: test.pdf")
+            st.info(f"使用默认文件: test.pdf(是关于英语口语模板的)")
         else:
             st.warning("⚠️ 默认文件不存在，请上传 PDF！")
 
@@ -200,3 +200,4 @@ if user_input:
 
         except Exception as e:
             st.error(f"发生错误: {e}")
+
