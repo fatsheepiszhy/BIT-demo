@@ -77,7 +77,8 @@ with st.sidebar:
                     embeddings = OpenAIEmbeddings(
                         model="BAAI/bge-m3",
                         api_key=SILICON_FLOW_API_KEY,
-                        base_url="https://api.siliconflow.cn/v1"
+                        base_url="https://api.siliconflow.cn/v1",
+                        chunk_size=50
                     )
 
                     st.write("4. 正在重建 ChromaDB 数据库...")
@@ -129,7 +130,8 @@ if user_input:
             embedding_model = OpenAIEmbeddings(
                 model="BAAI/bge-m3",
                 api_key=SILICON_FLOW_API_KEY,
-                base_url="https://api.siliconflow.cn/v1"
+                base_url="https://api.siliconflow.cn/v1",
+                chunk_size=50
             )
             
             # --- 2. 加载数据库 ---
@@ -200,6 +202,7 @@ if user_input:
         except Exception as e:
 
             st.error(f"发生错误: {e}")
+
 
 
 
